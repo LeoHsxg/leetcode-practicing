@@ -1,4 +1,3 @@
-i = 1
-i = 2
-i = 3
-print(i)
+for i in range(5):
+    s = "world"
+    print(s[i])

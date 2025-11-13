@@ -1,0 +1,20 @@
+# link
+https://ithelp.ithome.com.tw/m/articles/10260109
+
+1. Python 命名規則
+比較特殊的
+    特殊的變數, 開頭和結尾都加 兩個下底線 , ex: __init__
+    特殊的 class — 使用 單下底線或雙下底線
+    開頭單下底線 — 用在 private 的 method or variable
+    結尾單下底線 — 用在避免和 python keyword 的衝突 ex: str_
+    開頭雙下底線 — 會觸發 name mangling, 用在 class definition, 不常使用
+推薦的方式
+    Local variable	一律小寫,文字串接的時候使用下底線	val_name = 123
+    Globals(全域變數), Constants(常數)	一律大寫	PI=3.14
+    function(函數)	一律小寫,文字串接的時候使用下底線	def add():
+    Class(類別)	單字開頭第一個字大寫,其餘小寫,文字串接不使用下底線	ClassName
+    Module(模組), Package(套件)	一律小寫(J些下下下一篇會講到)	module.py
+
+2. Python 中沒有 Null 而是 None
+3. range
+range(start, end, step)，最少要有 end 。如果只輸入兩個數字，那兩個會是 start 跟 end。

@@ -15,8 +15,7 @@ class Solution:
             if math.gcd(*nums[begin:]) != 1:
                 continue
             GCD = []
-            # GCD = [math.gcd(Minus[i], Minus[i + 1]) for i in range(n - 1)]
-            process_nums = list(nums)
+            process_nums = nums.copy()
             no_gcd_index = 0
             for i in range(begin, n - 1):
                 GCD.append(math.gcd(process_nums[i], process_nums[i + 1]))
@@ -24,23 +23,18 @@ class Solution:
                     no_gcd_index = i + 1
                     break
                 process_nums[i] = process_nums[i + 1] = GCD[i - begin]
-            step = 0
-            for i in range(1, no_gcd_index - begin):
-                if math.gcd(nums[no_gcd_index], nums[no_gcd_index - i]) == 1:
-                    break
-                step += 1
+            step = sum(1 for i in range(1, no_gcd_index - begin) 
+                       if math.gcd(nums[no_gcd_index], nums[no_gcd_index - i]) != 1)
             step = step + n - nums.count(1)
             if step < best_step:
                 best_step = step
 
-        if best_step == 10**9:
-            return -1
-        return best_step
+        return best_step if best_step == 10**9 else best_step
 
 
 if __name__ == "__main__":
     solution = Solution()
-    # nums = [30, 6, 15, 10]
+    nums = [30, 6, 15, 10]
     # nums = [3, 4]
     # nums = [2, 6, 3, 4]
     # 2, 3, 5, 7, 11
