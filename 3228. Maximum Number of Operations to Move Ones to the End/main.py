@@ -3,10 +3,7 @@ import math
 
 class Solution:
     def maxOperations(self, s: str) -> int:
-        cnt_one = 0
-        ans = 0
-        has_zero = False
-        
+        cnt_one, ans, has_zero = 0, 0, False
         for char in s:  # 直接迭代字串，不需要索引
             if char == "1":
                 if has_zero:
