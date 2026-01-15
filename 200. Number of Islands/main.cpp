@@ -13,10 +13,12 @@ class Solution {
     vector<vector<int>> vis;
 
     int numIslands(vector<vector<char>>& grid) {
+        // review: vector don't have size() like array, use size() instead
         m = grid.size();
         n = grid[0].size();
 
         int islandCnt = 0;
+        // review: initialize 2D vector
         vis = vector<vector<int>>(m, vector<int>(n, 0));
 
         for (int i = 0; i < m; i++) {
